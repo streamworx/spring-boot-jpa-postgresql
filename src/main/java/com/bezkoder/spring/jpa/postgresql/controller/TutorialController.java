@@ -29,6 +29,11 @@ public class TutorialController {
 	@Autowired
 	TutorialRepository tutorialRepository;
 
+	@GetMapping("/")
+	String home() {
+        return "Hello World! build on dev";
+    }
+
 	@GetMapping("/tutorials")
 	public ResponseEntity<List<Tutorial>> getAllTutorials(@RequestParam(required = false) String title) {
 		try {
